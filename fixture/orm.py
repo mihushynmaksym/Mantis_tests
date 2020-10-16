@@ -25,6 +25,10 @@ class ORMFixture:
     def get_project_list(self):
         return self.convert_groups_to_model(select(g for g in ORMFixture.ORMProject))
 
+    @db_session
+    def clear_project_list(self):
+        return delete(g for g in ORMFixture.ORMProject)
+
     def convert_groups_to_model(self, projects):
         def convert(project):
             return Project(id=str(project.id),
