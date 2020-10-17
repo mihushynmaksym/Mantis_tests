@@ -1,0 +1,5 @@
+pytest
+selenium
+pony
+suds
+jsonpickle
