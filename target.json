@@ -9,5 +9,8 @@
     "name": "bugtracker",
     "user":  "root",
     "password": ""
+  },
+  "api": {
+    "service": "http://localhost/mantisbt/api/soap/mantisconnect.php?wsdl"
   }
 }

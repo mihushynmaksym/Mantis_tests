@@ -1,5 +1,5 @@
 pytest
 selenium
 pony
-suds
+suds-jurko
 jsonpickle

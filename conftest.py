@@ -22,9 +22,10 @@ def app(request):
     global fixture
     browser = request.config.getoption("--browser")
     web_config = load_config(request.config.getoption("--target"))['web']
+    api_config = load_config(request.config.getoption("--target"))['api']
     if fixture is None or not fixture.is_valid():
         fixture = Application(browser=browser, base_url=web_config['baseUrl'], login=web_config['login'],
-                              password=web_config['password'])
+                              password=web_config['password'], service=api_config['service'])
     fixture.session.ensure_login(login=web_config['login'], password=web_config['password'])  # check for login logic
     return fixture
 
